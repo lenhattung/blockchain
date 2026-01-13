@@ -749,7 +749,7 @@ Tạo file `blockchain_vs_database.md`:
 
 **Yêu cầu:** Sinh viên cần hoàn thành báo cáo sau khi kết thúc thực hành.
 
-### 📝 Hướng Dẫn Nộp Bài:
+### Hướng Dẫn Nộp Bài:
 
 1. **Bước 1:** Chụp ảnh màn hình (Screenshot) kết quả Terminal từ tất cả 5 bài tập
 
@@ -796,7 +796,7 @@ Tạo file `blockchain_vs_database.md`:
 
 ---
 
-## 📋 TIÊU CHÍ CHẤM ĐIỂM:
+## TIÊU CHÍ CHẤM ĐIỂM:
 
 | Tiêu chí | Điểm | Mô tả |
 |----------|------|-------|
@@ -809,7 +809,7 @@ Tạo file `blockchain_vs_database.md`:
 
 ## V. TÀI LIỆU THAM KHẢO & LIÊN KẾT HỮU ÍCH
 
-### 📚 Tài liệu trực tuyến:
+### Tài liệu trực tuyến:
 - **Anders Brownworth Blockchain Visualizer:** https://andersbrownworth.com/blockchain/
 - **Node.js Official Docs:** https://nodejs.org/docs/
 - **Node.js Crypto Module:** https://nodejs.org/api/crypto.html
@@ -817,7 +817,7 @@ Tạo file `blockchain_vs_database.md`:
 - **MDN JavaScript:** https://developer.mozilla.org/en-US/docs/Web/JavaScript
 - **Ethereum Official:** https://ethereum.org/
 
-### 💡 GỢI Ý CHO BÀI TẬP NÂNG CAO:
+### GỢI Ý CHO BÀI TẬP NÂNG CAO:
 1. Thay đổi hàm hash từ SHA-256 sang SHA-1 hoặc SHA-512 và so sánh
 2. Tạo một blockchain với 5 block, mỗi block có 3 giao dịch
 3. Mô phỏng quá trình mining với difficulty = 4, 5, 6 và so sánh thời gian
@@ -829,17 +829,12 @@ Tạo file `blockchain_vs_database.md`:
 9. Xây dựng Merkle Tree với visualization
 10. Tìm hiểu về các loại blockchain khác (Proof of Stake, Layer 2, etc.)
 
-### 📚 Sách Tham Khảo:
+### Sách Tham Khảo:
 - "Mastering Bitcoin" - Andreas M. Antonopoulos
 - "Mastering Ethereum" - Andreas M. Antonopoulos & Gavin Wood
 - "The Bitcoin Standard" - Saifedean Ammous
 
 ---
 
-## 🎓 CHÚC BẠN HOÀN THÀNH THÀNH CÔNG BÀI THỰC HÀNH!
+## CHÚC BẠN HOÀN THÀNH THÀNH CÔNG BÀI THỰC HÀNH!
 
-Nếu có bất kỳ thắc mắc hoặc vấn đề kỹ thuật, vui lòng liên hệ với giáo viên.
-
-**Tài liệu được cập nhật:** Tháng 1, 2025
-**Thời lượng:** 5 tiết (300 phút)
-**Mức độ:** Cơ bản - Nâng cao
