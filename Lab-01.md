@@ -3,7 +3,7 @@
 
 ## THÔNG TIN CHUNG
 - **Chủ đề:** Cài đặt môi trường Blockchain cơ bản & Mô phỏng Mật mã học
-- **Thời lượng:** 300 phút (5 tiết)
+- **Thời lượng:** 300 phút (5 PHẦN)
 - **Mục tiêu lớp:** Làm quen với các khái niệm cơ bản của Blockchain thông qua thực hành toàn diện
 
 ## I. MỤC TIÊU BÀI HỌC
@@ -100,11 +100,11 @@ git --version
 
 ## III. NỘI DUNG THỰC HÀNH (240 phút)
 
-Phần này bao gồm 5 tiết thực hành để hiểu về hashing, chữ ký số, merkle tree, blockchain cơ bản, và tính bất biến của blockchain.
+Phần này bao gồm 5 PHẦN thực hành để hiểu về hashing, chữ ký số, merkle tree, blockchain cơ bản, và tính bất biến của blockchain.
 
 ---
 
-## TIẾT 1: KHÁM PHÁ HASHING THÔNG QUA MÔ PHỎNG WEB (50 phút)
+## PHẦN 1: KHÁM PHÁ HASHING THÔNG QUA MÔ PHỎNG WEB (50 phút)
 
 **Mục đích:** Hiểu trực quan cách hàm băm SHA-256 thay đổi khi dữ liệu thay đổi (Avalanche Effect) và cơ chế cơ bản của blockchain.
 
@@ -247,7 +247,7 @@ node hash_comparison.js
 
 ---
 
-## TIẾT 2: CHỮ KÝ SỐ & CẶP KHÓA CÔNG KHAI (50 phút)
+## PHẦN 2: CHỮ KÝ SỐ & CẶP KHÓA CÔNG KHAI (50 phút)
 
 **Mục đích:** Hiểu nguyên tắc xác thực và mật mã hóa khóa công khai, những công cụ cơ bản để xác minh danh tính trong blockchain.
 
@@ -384,7 +384,7 @@ node digital_signature.js
 
 ---
 
-## TIẾT 3: MÔ PHỎNG MERKLE TREE (50 phút)
+## PHẦN 3: MÔ PHỎNG MERKLE TREE (50 phút)
 
 **Mục đích:** Hiểu cấu trúc Merkle Tree - Cách blockchain xác thực hiệu quả dữ liệu thông qua băm cây mà không cần hash toàn bộ dữ liệu.
 
@@ -576,7 +576,7 @@ node merkle_tree_dynamic.js
 
 ---
 
-## TIẾT 4: XÂY DỰNG BLOCKCHAIN ĐƠN GIẢN (100 phút)
+## PHẦN 4: XÂY DỰNG BLOCKCHAIN ĐƠN GIẢN (100 phút)
 
 **Mục đích:** Tổng hợp tất cả kiến thức vừa học để xây dựng một blockchain hoàn chỉnh với các block liên kết, chứng minh công việc, và kiểm tra tính hợp lệ.
 
@@ -840,13 +840,13 @@ Chạy lại và quan sát thời gian mining tăng lên đáng kể.
 
 ### Hướng Dẫn Nộp Bài:
 
-1. **Bước 1:** Chụp ảnh màn hình (Screenshot) kết quả Terminal từ tất cả 5 tiết
+1. **Bước 1:** Chụp ảnh màn hình (Screenshot) kết quả Terminal từ tất cả 5 PHẦN
 
 2. **Bước 2:** Tạo file Word (hoặc Google Docs) có tên: 
    `BaoCao_Blockchain_Buoi1_2_[TenHocSinh].docx`
 
 3. **Bước 3:** Nộp file PDF bao gồm:
-   - 5 ảnh screenshot kết quả chạy code (1 cho mỗi tiết)
+   - 5 ảnh screenshot kết quả chạy code (1 cho mỗi PHẦN)
    - Trả lời các câu hỏi dưới đây
 
 ---
@@ -859,7 +859,7 @@ Chạy lại và quan sát thời gian mining tăng lên đáng kể.
 ### **Câu 2:** Tại sao thay đổi chỉ 1 ký tự trong dữ liệu gốc, mã Hash lại thay đổi hoàn toàn?
 **Gợi ý:** Đây là "Avalanche Effect" - Tính chất của hàm hash mã hóa. 1 bit thay đổi → Khoảng 50% bits trong hash thay đổi.
 
-### **Câu 3:** Nêu 3 tính chất của SHA-256 mà bạn đã quan sát được từ tiết 1 & 2.
+### **Câu 3:** Nêu 3 tính chất của SHA-256 mà bạn đã quan sát được từ PHẦN 1 & 2.
 **Gợi ý:** Deterministic (xác định), Sensitive (nhạy cảm), One-way (một chiều), Avalanche Effect.
 
 ### **Câu 4:** Chữ ký số có tác dụng gì trong blockchain?
@@ -871,7 +871,7 @@ Chạy lại và quan sát thời gian mining tăng lên đáng kể.
 ### **Câu 6:** Merkle Tree có lợi ích gì so với việc hash toàn bộ dữ liệu cùng lúc?
 **Gợi ý:** Hiệu quả (không cần tải toàn bộ), Xác thực nhanh (chỉ so sánh Merkle Root), Phát hiện lỗi từng phần.
 
-### **Câu 7:** Trong bài tập tiết 4, Nonce là gì? Tại sao cần Nonce?
+### **Câu 7:** Trong bài tập PHẦN 4, Nonce là gì? Tại sao cần Nonce?
 **Gợi ý:** Nonce = Number used once. Dùng để tìm hash bắt đầu bằng các số 0, chứng minh công việc (Proof of Work).
 
 ### **Câu 8:** Khi bạn sửa một block trong blockchain, điều gì sẽ xảy ra?
@@ -889,7 +889,7 @@ Chạy lại và quan sát thời gian mining tăng lên đáng kể.
 
 | Tiêu chí | Điểm | Mô tả |
 |----------|------|-------|
-| Hoàn thành các tiết thực hành | 4 | Chạy thành công tất cả 5 tiết, có 5 screenshot |
+| Hoàn thành các PHẦN thực hành | 4 | Chạy thành công tất cả 5 PHẦN, có 5 screenshot |
 | Trả lời câu hỏi | 4 | Trả lời đầy đủ 10 câu, chính xác, có giải thích |
 | Hiểu biết khái niệm | 2 | Thể hiện hiểu rõ: hashing, chữ ký, merkle tree, blockchain, tính bất biến |
 | **Tổng cộng** | **10** | |
@@ -929,6 +929,6 @@ Chạy lại và quan sát thời gian mining tăng lên đáng kể.
 
 **Lưu ý cuối cùng:**
 - Lưu lại tất cả code vào một thư mục (Blockchain_Lab)
-- Làm báo cáo chi tiết với screenshot đầy đủ
+- Làm báo cáo chi PHẦN với screenshot đầy đủ
 - Nếu có khó khăn, hãy review lại phần lý thuyết trước đó
 - Thử nghiệm thêm bằng cách sửa code và quan sát kết quả thay đổi
