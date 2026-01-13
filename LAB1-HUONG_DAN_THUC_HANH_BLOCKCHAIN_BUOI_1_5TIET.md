@@ -762,7 +762,7 @@ Tạo file `blockchain_vs_database.md`:
 
 ---
 
-## ❓ CÂU HỎI BÁO CÁO (10 câu):
+## CÂU HỎI BÁO CÁO (10 câu):
 
 ### **Câu 1:** SHA-256 Hash có độ dài bao nhiêu ký tự?
 **Gợi ý:** Quan sát output của hash_test.js, đếm số ký tự. SHA-256 = 256 bits = ? hex characters
