@@ -1,4 +1,4 @@
-# HƯỚNG DẪN THỰC HÀNH BLOCKCHAIN - BUỔI 1 & 2 (GỘP)
+# HƯỚNG DẪN THỰC HÀNH BLOCKCHAIN - LAB-01
 ## Cài Đặt Môi Trường, Mật Mã Học & Xây Dựng Blockchain Cơ Bản
 
 ## THÔNG TIN CHUNG
