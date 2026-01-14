@@ -854,34 +854,24 @@ Chạy lại và quan sát thời gian mining tăng lên đáng kể.
 ## CÂU HỎI BÁO CÁO (10 câu):
 
 ### **Câu 1:** SHA-256 Hash có độ dài bao nhiêu ký tự? Giải thích vì sao?
-**Gợi ý:** SHA-256 = 256 bits. Mỗi byte = 2 ký tự hex (0-9, A-F). Vậy 256 bits / 8 = 32 bytes = 32 × 2 = 64 ký tự.
 
 ### **Câu 2:** Tại sao thay đổi chỉ 1 ký tự trong dữ liệu gốc, mã Hash lại thay đổi hoàn toàn?
-**Gợi ý:** Đây là "Avalanche Effect" - Tính chất của hàm hash mã hóa. 1 bit thay đổi → Khoảng 50% bits trong hash thay đổi.
 
 ### **Câu 3:** Nêu 3 tính chất của SHA-256 mà bạn đã quan sát được từ PHẦN 1 & 2.
-**Gợi ý:** Deterministic (xác định), Sensitive (nhạy cảm), One-way (một chiều), Avalanche Effect.
 
 ### **Câu 4:** Chữ ký số có tác dụng gì trong blockchain?
-**Gợi ý:** Xác thực danh tính (Chứng minh ai gửi giao dịch), Không thể từ chối (Non-repudiation).
 
 ### **Câu 5:** Tại sao Private Key không được chia sẻ? Nếu Private Key bị lộ sẽ như thế nào?
-**Gợi ý:** Ai có Private Key của bạn có thể ký giao dịch thay bạn. Đây là "mật khẩu" của tài khoản blockchain.
 
 ### **Câu 6:** Merkle Tree có lợi ích gì so với việc hash toàn bộ dữ liệu cùng lúc?
-**Gợi ý:** Hiệu quả (không cần tải toàn bộ), Xác thực nhanh (chỉ so sánh Merkle Root), Phát hiện lỗi từng phần.
 
 ### **Câu 7:** Trong bài tập PHẦN 4, Nonce là gì? Tại sao cần Nonce?
-**Gợi ý:** Nonce = Number used once. Dùng để tìm hash bắt đầu bằng các số 0, chứng minh công việc (Proof of Work).
 
 ### **Câu 8:** Khi bạn sửa một block trong blockchain, điều gì sẽ xảy ra?
-**Gợi ý:** Block hash thay đổi → Block tiếp theo previousHash không khớp → Tất cả block sau phải tính lại hash.
 
 ### **Câu 9:** Blockchain khác gì so với database truyền thống về tính bảo mật?
-**Gợi ý:** Blockchain immutable (không thể sửa), Distributed (phân tán), không có điểm yếu trung tâm.
 
 ### **Câu 10:** Nêu 3 ứng dụng thực tế của blockchain (ngoài tiền tệ điện tử) mà bạn biết hoặc tìm hiểu được.
-**Gợi ý:** Chuỗi cung ứng, Y tế, Giáo dục, Bất động sản, Bầu cử, v.v.
 
 ---
 
