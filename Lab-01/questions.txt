@@ -1,0 +1,9 @@
+Câu 1: SHA-256 Hash có độ dài bao nhiêu ký tự? Giải thích vì sao?
+
+Câu 2: Tại sao thay đổi chỉ 1 ký tự trong dữ liệu gốc, mã Hash lại thay đổi hoàn toàn?
+
+Câu 3: Nêu 3 tính chất của SHA-256 mà bạn đã quan sát được từ PHẦN 1 & 2.
+
+Câu 4: Chữ ký số có tác dụng gì trong blockchain?
+
+Câu 5: Tại sao Private Key không được chia sẻ? Nếu Private Key bị lộ sẽ như thế nào?
