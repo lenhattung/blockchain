@@ -1,74 +1,85 @@
 // scripts/deploy-and-test.js
-import { ethers } from "hardhat";
+import hre from "hardhat";
+import { parseEther, formatEther } from "viem";
 
 async function main() {
-  // Lấy 5 tài khoản giả lập từ Hardhat (Account #0 đến #4)
-  const [admin, farmer, manufacturer, distributor, retailer] = await ethers.getSigners();
+  // Hardhat v3: lấy viem từ network.connect()
+  const { viem } = await hre.network.connect();
 
-  // In địa chỉ các tài khoản ra màn hình để kiểm tra
+  const [admin, farmer, manufacturer, distributor, retailer] =
+    await viem.getWalletClients();
+
   console.log("========== FOOD TRACEABILITY TEST ==========");
-  console.log("Admin:       ", admin.address);
-  console.log("Farmer:      ", farmer.address);
-  console.log("Manufacturer:", manufacturer.address);
-  console.log("Distributor: ", distributor.address);
-  console.log("Retailer:    ", retailer.address);
+  console.log("Admin:       ", admin.account.address);
+  console.log("Farmer:      ", farmer.account.address);
+  console.log("Manufacturer:", manufacturer.account.address);
+  console.log("Distributor: ", distributor.account.address);
+  console.log("Retailer:    ", retailer.account.address);
 
   // ===== BƯỚC 1: DEPLOY CONTRACT =====
   console.log("\n[BUOC 1] Deploying contract...");
-  const FoodTraceability = await ethers.getContractFactory("FoodTraceability");
-  const contract = await FoodTraceability.deploy();
-  await contract.waitForDeployment();
-  console.log("  Contract deployed tai:", await contract.getAddress());
+  const contract = await viem.deployContract("FoodTraceability");
+  console.log("  Contract deployed tai:", contract.address);
 
   // ===== BƯỚC 2: THÊM PARTICIPANTS =====
   console.log("\n[BUOC 2] Them participants...");
-  await contract.connect(admin).addParticipant(farmer.address, "Nong Trai Xanh", 1);
-  await contract.connect(admin).addParticipant(manufacturer.address, "Nha May Sach", 2);
-  await contract.connect(admin).addParticipant(distributor.address, "Cong Ty Van Tai ABC", 3);
-  await contract.connect(admin).addParticipant(retailer.address, "Sieu Thi BigC", 4);
+  await contract.write.addParticipant(
+    [farmer.account.address, "Nong Trai Xanh", 1],
+    { account: admin.account }
+  );
+  await contract.write.addParticipant(
+    [manufacturer.account.address, "Nha May Sach", 2],
+    { account: admin.account }
+  );
+  await contract.write.addParticipant(
+    [distributor.account.address, "Cong Ty Van Tai ABC", 3],
+    { account: admin.account }
+  );
+  await contract.write.addParticipant(
+    [retailer.account.address, "Sieu Thi BigC", 4],
+    { account: admin.account }
+  );
   console.log("  Da them 4 participants thanh cong!");
 
-  // ===== BƯỚC 3: FARMER tạo sản phẩm (State: Planted) =====
+  // ===== BƯỚC 3: FARMER tạo sản phẩm =====
   console.log("\n[BUOC 3] FARMER: Tao san pham...");
-  const tx1 = await contract.connect(farmer).createProduct("Ca Phe Arabica", "Bao Loc, Lam Dong, Vietnam");
-  await tx1.wait();
+  await contract.write.createProduct(
+    ["Ca Phe Arabica", "Bao Loc, Lam Dong, Vietnam"],
+    { account: farmer.account }
+  );
   console.log("  San pham ID:1 da tao - Trang thai: Da gieo trong");
 
-  // ===== BƯỚC 4: FARMER thu hoạch (State: Harvested) =====
+  // ===== BƯỚC 4: FARMER thu hoạch =====
   console.log("\n[BUOC 4] FARMER: Thu hoach...");
-  const tx2 = await contract.connect(farmer).harvestProduct(1);
-  await tx2.wait();
+  await contract.write.harvestProduct([1n], { account: farmer.account });
   console.log("  Trang thai: Da thu hoach");
 
-  // ===== BƯỚC 5: MANUFACTURER chế biến (State: Processed) =====
+  // ===== BƯỚC 5: MANUFACTURER chế biến =====
   console.log("\n[BUOC 5] MANUFACTURER: Che bien...");
-  const tx3 = await contract.connect(manufacturer).processProduct(1);
-  await tx3.wait();
+  await contract.write.processProduct([1n], { account: manufacturer.account });
   console.log("  Trang thai: Da che bien");
 
-  // ===== BƯỚC 6: DISTRIBUTOR vận chuyển (State: Shipped) =====
+  // ===== BƯỚC 6: DISTRIBUTOR vận chuyển =====
   console.log("\n[BUOC 6] DISTRIBUTOR: Van chuyen...");
-  const tx4 = await contract.connect(distributor).shipProduct(1);
-  await tx4.wait();
+  await contract.write.shipProduct([1n], { account: distributor.account });
   console.log("  Trang thai: Dang van chuyen");
 
-  // ===== BƯỚC 7: RETAILER nhận hàng + đặt giá (State: ForSale) =====
+  // ===== BƯỚC 7: RETAILER nhận hàng + đặt giá =====
   console.log("\n[BUOC 7] RETAILER: Nhan hang va dat gia...");
-  const price = ethers.parseEther("0.05");
-  const tx5 = await contract.connect(retailer).receiveProduct(1, price);
-  await tx5.wait();
+  const price = parseEther("0.05");
+  await contract.write.receiveProduct([1n, price], { account: retailer.account });
   console.log("  Trang thai: Dang ban - Gia: 0.05 ETH");
 
-  // ===== BƯỚC 8: Đọc lịch sử sản phẩm (góc nhìn người tiêu dùng) =====
+  // ===== BƯỚC 8: Đọc lịch sử sản phẩm =====
   console.log("\n===== LICH SU SAN PHAM #1 =====");
-  const h = await contract.getProductHistory(1);
-  console.log("Ten san pham:  ", h.name);
-  console.log("Nong dan:     ", h.farmerName);
-  console.log("Dia diem:     ", h.farmLocation);
-  console.log("Nha may:      ", h.manufacturerName);
-  console.log("Phan phoi:    ", h.distributorName);
-  console.log("Sieu thi:     ", h.retailerName);
-  console.log("Gia ban (Wei):", h.price.toString());
+  const h = await contract.read.getProductHistory([1n]);
+  console.log("Ten san pham:  ", h[0]);
+  console.log("Nong dan:      ", h[2]);
+  console.log("Dia diem:      ", h[3]);
+  console.log("Nha may:       ", h[5]);
+  console.log("Phan phoi:     ", h[7]);
+  console.log("Sieu thi:      ", h[9]);
+  console.log("Gia ban (ETH): ", formatEther(h[11]));
   console.log("\n HOAN THANH - Toan bo quy trinh test thanh cong!");
 }
 
