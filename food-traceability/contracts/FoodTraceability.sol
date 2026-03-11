@@ -439,10 +439,21 @@ contract FoodTraceability {
     // PHẦN 8: XEM LỊCH SỬ SẢN PHẨM (PUBLIC)
     // ========================================
     
-    /**
+     /**
      * @dev Xem toàn bộ lịch sử sản phẩm - CÔNG KHAI cho người tiêu dùng
      * @param _productId ID sản phẩm cần tra cứu
-     * @return Toàn bộ thông tin chuỗi cung ứng
+     * @return name Tên sản phẩm
+     * @return currentState Trạng thái hiện tại
+     * @return farmerName Tên nông dân
+     * @return farmLocation Vị trí trang trại
+     * @return plantedDate Ngày gieo trồng
+     * @return manufacturerName Tên nhà máy
+     * @return processedDate Ngày chế biến
+     * @return distributorName Tên nhà phân phối
+     * @return shippedDate Ngày vận chuyển
+     * @return retailerName Tên siêu thị
+     * @return receivedDate Ngày nhận hàng
+     * @return price Giá bán
      */
     function getProductHistory(uint256 _productId) 
         public 
